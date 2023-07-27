@@ -1,0 +1,47 @@
+<!doctype html> 
+<html lang="en"> 
+
+<head>
+    <meta charset="utf-8"> 
+    <title>URL Shortener</title> 
+</head> 
+
+<style> 
+  body { 
+    height: 100vh; 
+    background-color: lightblue; 
+    font-family: 'Arial'; 
+    align-content: center;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+ } 
+</style> 
+
+<body>   
+<div>
+    {% if messages %}
+    {% for message in messages %}
+    {% if message.tags %}
+    <script>alert("{{ message }}")</script> {% endif %}
+    {% endfor %}
+    {% endif %}
+    <a href="created">View Url</a>
+    <h1 align="center">URL Shortner</h1>
+    <form action="shorten" method="POST">
+        {% csrf_token %}
+        <table>
+            <tbody>
+                <tr>
+                    <td><label>URL</label></td>
+                    <td><input type="text" name="url"></td>
+                </tr>
+                <tr>
+                    <td><button>Submit</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>    
+</div>    
+</body>   
+</html>

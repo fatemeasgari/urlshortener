@@ -1,0 +1,42 @@
+<!doctype html> 
+<html lang="en"> 
+
+<head>
+    <meta charset="utf-8"> 
+    <title>URL Shortener</title> 
+</head> 
+
+<style> 
+  body { 
+    height: 100vh; 
+    background-color: silver; 
+    font-family: 'Times New Roman'; 
+    align-content: center;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+ } 
+</style> 
+
+<body>   
+<div>
+<a href="/">Home</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Long url</th>
+                <th>Short url</th>
+            </tr>
+        </thead>
+        {% for i in url %}
+        <tbody>
+            <tr>
+                <td>{{i.url}}</td>
+                <td>{{i.slug}}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>    
+</body>   
+</html>
